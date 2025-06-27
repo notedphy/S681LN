@@ -4,11 +4,11 @@
         manifest_boot.xml
         manifest_gnss.xml
         manifest_network.xml
+        manifest_fingerprint.xml
         manifest_tranlog.xml
         manifest_tranlogconfig.xml
         nfc_manifest.xml
         manifest.xml
-        manifest_silead.xml
 -->
 <manifest version="4.0" type="device" target-level="6">
     <hal format="hidl">
@@ -30,6 +30,16 @@
             <instance>default</instance>
         </interface>
         <fqname>@7.0::IEffectsFactory/default</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>android.hardware.biometrics.fingerprint</name>
+        <transport>hwbinder</transport>
+        <version>2.1</version>
+        <interface>
+            <name>IBiometricsFingerprint</name>
+            <instance>default</instance>
+        </interface>
+        <fqname>@2.1::IBiometricsFingerprint/default</fqname>
     </hal>
     <hal format="hidl">
         <name>android.hardware.bluetooth</name>
@@ -167,19 +177,14 @@
         <fqname>@1.0::IDevice/default</fqname>
     </hal>
     <hal format="hidl">
-        <name>com.fingerprints.extension</name>
+        <name>vendor.goodix.hardware.biometrics.fingerprint</name>
         <transport>hwbinder</transport>
-        <version>1.0</version>
+        <version>2.1</version>
         <interface>
-            <name>IFingerprintNavigation</name>
+            <name>IGoodixFingerprintDaemon</name>
             <instance>default</instance>
         </interface>
-        <interface>
-            <name>IFingerprintSensorTest</name>
-            <instance>default</instance>
-        </interface>
-        <fqname>@1.0::IFingerprintNavigation/default</fqname>
-        <fqname>@1.0::IFingerprintSensorTest/default</fqname>
+        <fqname>@2.1::IGoodixFingerprintDaemon/default</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.nxp.nxpnfc</name>
@@ -200,16 +205,6 @@
             <instance>default</instance>
         </interface>
         <fqname>@1.0::INxpNfcLegacy/default</fqname>
-    </hal>
-    <hal format="hidl">
-        <name>vendor.silead.hardware.fingerprintext</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>ISileadFingerprint</name>
-            <instance>default</instance>
-        </interface>
-        <fqname>@1.0::ISileadFingerprint/default</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.sprd.hardware.algoservice</name>
