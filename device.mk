@@ -51,6 +51,8 @@ PRODUCT_PACKAGES += \
     bootctrl.recovery \
     unisoc.bootctrl
 
+# Dynamic Partition
+PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
 PRODUCT_PACKAGES += \
     bootctrl.ums9230
