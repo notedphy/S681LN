@@ -166,6 +166,8 @@ TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_USE_TOOLBOX := true
 TW_INCLUDE_REPACKTOOLS := true
 TW_DEVICE_VERSION := X6528-Massatrio16
+TW_INCLUDE_NTFS_3G := true
+TARGET_USES_MKE2FS := true
 
 #logs
 TARGET_USES_LOGD := true
@@ -177,8 +179,10 @@ TW_INCLUDE_RESETPROP := true
 RECOVERY_SDCARD_ON_DATA := true
 
 
-
-
+# Dynamic Partition
+PRODUCT_USE_DYNAMIC_PARTITIONS := true
+# System as root
+BOARD_SUPPRESS_SECURE_ERASE := true
 
 #additional lib for fix decryption
 TW_RECOVERY_ADDITIONAL_RELINK_LIBRARY_FILES += \
