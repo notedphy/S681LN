@@ -11,4 +11,4 @@ PRODUCT_MAKEFILES := \
 
 COMMON_LUNCH_CHOICES := \
     twrp_S681LN-eng \
-    pb_S681LN
+    pb_S681LN-eng
