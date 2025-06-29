@@ -7,6 +7,10 @@
 DEVICE_PATH := device/itel/S681LN
 
 
+
+SELINUX_IGNORE_NEVERALLOWS := true
+BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
+
 # For building with minimal manifest
 ALLOW_MISSING_DEPENDENCIES := true
 
