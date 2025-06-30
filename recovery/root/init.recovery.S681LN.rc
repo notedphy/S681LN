@@ -24,18 +24,20 @@ service keymint-2-0 /vendor/bin/hw/android.hardware.security.keymint@2.0-unisoc.
     disabled
 seclabel u:r:recovery:s0
 
-service gatekeeper-1-0 /vendor/bin/hw/android.hardware.gatekeeper@1.0-service.trusty /data/misc/gatekeeper
+service gatekeeper-1-0 /vendor/bin/hw/android.hardware.gatekeeper@1.0-service.trusty
     user root
     group root
     disabled
     seclabel u:r:recovery:s0
     
 service gatekeeperd /system/bin/gatekeeperd /data/misc/gatekeeper
+    class late_start
     user root
+    writepid /dev/cpuset/system-background/tasks
     group root system
-    disabled
     seclabel u:r:recovery:s0
     
+
 on property:vendor.sys.listener.registered=true
 start keymint-2-0
 start gatekeeper-1-0
