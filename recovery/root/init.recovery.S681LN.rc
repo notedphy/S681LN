@@ -24,7 +24,7 @@ service keymint-2-0 /vendor/bin/hw/android.hardware.security.keymint@2.0-unisoc.
     disabled
 seclabel u:r:recovery:s0
 
-service gatekeeper-1-0 /vendor/bin/hw/android.hardware.gatekeeper@1.0-service.trusty
+service gatekeeper-1-0 /vendor/bin/hw/android.hardware.gatekeeper@1.0-service.trusty /data/misc/gatekeeper
     user root
     group root
     disabled
