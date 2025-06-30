@@ -30,6 +30,12 @@ service gatekeeper-1-0 /vendor/bin/hw/android.hardware.gatekeeper@1.0-service.tr
     disabled
     seclabel u:r:recovery:s0
     
+service gatekeeperd /system/bin/gatekeeperd /data/misc/gatekeeper
+    user root
+    group root system
+    disabled
+    seclabel u:r:recovery:s0
+    
 on property:vendor.sys.listener.registered=true
 start keymint-2-0
 start gatekeeper-1-0
@@ -47,12 +53,12 @@ stop keymint-2-0
 stop gatekeeper-1-0
 
 on boot
-install_keyring
+#install_keyring
 start keymint-2-0
 start gatekeeper-1-0
 start boot-hal-1-2
 start health-hal-2-1
-
+start gatekeeperd
  
  #### THIS IS FROM INIT RECOVERY COMMMON
 
