@@ -8,8 +8,7 @@ DEVICE_PATH := device/itel/S681LN
 
 
 
-SELINUX_IGNORE_NEVERALLOWS := true
-BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
+
 
 # For building with minimal manifest
 ALLOW_MISSING_DEPENDENCIES := true
@@ -141,9 +140,9 @@ BOARD_INCLUDE_RECOVERY_RAMDISK_IN_VENDOR_BOOT := true
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/system/etc/recovery.fstab
 
 
-#TW_INCLUDE_CRYPTO := true
-#TW_INCLUDE_CRYPTO_FBE := true
-#BOARD_USES_METADATA_PARTITION := true
+TW_INCLUDE_CRYPTO := true
+TW_INCLUDE_CRYPTO_FBE := true
+BOARD_USES_METADATA_PARTITION := true
 TW_USE_FSCRYPT_POLICY := 2
 
 # Hack: prevent anti rollback

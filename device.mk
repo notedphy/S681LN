@@ -75,9 +75,6 @@ PRODUCT_PACKAGES += \
 # Dynamic partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
-PRODUCT_PACKAGES += \
-libgatekeeper_aidl \
-libgatekeeper_aidl.so
 
 # VNDK
 PRODUCT_TARGET_VNDK_VERSION := 33
